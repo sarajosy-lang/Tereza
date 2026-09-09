@@ -6,7 +6,6 @@
 <meta name="theme-color" content="#8d3f72">
 <meta name="description" content="TEREZA — central informativa para organizar apresentações, dúvidas e fontes sobre tirzepatida.">
 <title>TEREZA — Central de informações</title>
-<link rel="manifest" href="manifest.json">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%238d3f72'/%3E%3Ctext x='50' y='65' text-anchor='middle' font-size='52' fill='white' font-family='Arial'%3ET%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="styles.css">
 
@@ -22,7 +21,7 @@
   <div class="brand"><span class="brand-mark">T</span><div><b>TEREZA</b><small>informação que você entende</small></div></div>
   <button class="menu" id="menuBtn" aria-label="Abrir menu">☰</button>
   <nav id="nav">
-    <a href="#inicio">Início</a><a href="#assistente">TEREZA</a><a href="#calculadora">Calculadora</a><a href="#comparar">Comparar</a>
+    <a href="#inicio">Início</a><a href="#assistente">TEREZA</a><a href="#calculadora">Calculadora</a><a href="#comparador">Comparar</a>
     <a href="#produtos">Produtos</a><a href="#dicas">Dicas</a><a href="#duvidas">Dúvidas</a><a href="#seringas">Seringas</a><a href="#fontes">Fontes</a>
   </nav>
 </header>
@@ -71,7 +70,7 @@
 
 <section class="cards">
   <a href="#calculadora" class="feature"><span>🧮</span><h2>Calculadora da Tereza</h2><p>Consulte relações matemáticas da apresentação cadastrada e a referência do material fornecido.</p></a>
-  <a href="#comparar" class="feature"><span>📊</span><h2>Comparar apresentações</h2><p>Veja diferenças de concentração, volume e outras características.</p></a>
+  <a href="#comparador" class="feature"><span>📊</span><h2>Comparar apresentações</h2><p>Veja diferenças de concentração, volume e outras características.</p></a>
   <a href="#produtos" class="feature"><span>📦</span><h2>Banco de produtos</h2><p>Catálogo visual organizado por marca e apresentação.</p></a>
   <a href="#duvidas" class="feature"><span>❓</span><h2>Dúvidas frequentes</h2><p>As perguntas repetidas do grupo em um só lugar.</p></a>
   <a href="#seringas" class="feature"><span>💉</span><h2>Guia das seringas</h2><p>Aprenda a interpretar a escala da sua seringa sem assumir que todo risquinho vale 1 UI.</p></a>
@@ -143,18 +142,6 @@
   <div class="product-grid" id="products"></div>
 </section>
 
-
-
-<section id="seringas" class="section syringe-section">
-  <div class="section-head"><span class="eyebrow">GUIA VISUAL</span><h2>💉 Como ler as marcações da seringa</h2><p><b>Regra principal:</b> não presuma que cada risquinho representa 1 UI. A graduação depende do modelo da seringa.</p></div>
-  <div class="warning-card"><b>⚠️ Uma seringa de 100 UI pode ter uma escala diferente de outra seringa de 100 UI.</b><span>O número 30, 50 ou 100 UI informa a capacidade da escala; ele, sozinho, não informa quanto vale cada pequeno intervalo.</span></div>
-  <div class="syringe-grid">
-    <article class="syringe-card"><img src="syringes-scale.jpg" alt="Exemplo visual de seringas com diferentes escalas" onerror="this.src='syringes-scale.jpg'"><h3>Observe os intervalos</h3><p>Primeiro identifique os números maiores. Depois conte os pequenos intervalos entre duas marcações numeradas. É isso que determina a leitura da escala.</p></article>
-    <article class="syringe-card"><img src="syringes-reference.jpg" alt="Tabela visual enviada como material de referência"><h3>Não misture escalas</h3><p>Materiais de terceiros podem apresentar tabelas diferentes. A Tereza deve mostrar a origem de cada material e não tratar uma tabela de internet como regra universal.</p></article>
-    <article class="syringe-card"><img src="syringes-example.jpg" alt="Material visual sobre fracionamento de tirzepatida"><h3>Quando houver dúvida</h3><p>Se a escala da sua seringa não estiver clara, não tente “adivinhar” a divisão. Confirme o modelo e a graduação com o profissional que orientou o uso.</p></article>
-  </div>
-  <div class="scale-demo"><h3>Checklist rápido</h3><div class="check-grid"><div><b>1</b><span>Veja a capacidade: 30, 50 ou 100 UI.</span></div><div><b>2</b><span>Leia os números impressos na própria seringa.</span></div><div><b>3</b><span>Conte os intervalos entre duas marcações conhecidas.</span></div><div><b>4</b><span>Não conclua que cada risquinho vale 1 UI sem verificar a escala.</span></div></div></div>
-</section>
 
 
 <section id="dicas" class="section">
