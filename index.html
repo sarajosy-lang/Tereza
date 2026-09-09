@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#8d3f72">
+<meta name="description" content="TEREZA — central informativa para organizar apresentações, dúvidas e fontes sobre tirzepatida.">
+<title>TEREZA — Central de informações</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%238d3f72'/%3E%3Ctext x='50' y='65' text-anchor='middle' font-size='52' fill='white' font-family='Arial'%3ET%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+
+<meta name="description" content="TEREZA — guia informativo e educativo sobre apresentações, seringas, dúvidas e fontes.">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="TEREZA — Guia Informativo">
+<meta property="og:description" content="Informação organizada, fontes e ferramentas educativas. A TEREZA não prescreve nem diagnostica.">
+<link rel="manifest" href="manifest.webmanifest">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span class="brand-mark">T</span><div><b>TEREZA</b><small>informação que você entende</small></div></div>
+  <button class="menu" id="menuBtn" aria-label="Abrir menu">☰</button>
+  <nav id="nav">
+    <a href="#inicio">Início</a><a href="#assistente">TEREZA</a><a href="#calculadora">Calculadora</a><a href="#comparar">Comparar</a>
+    <a href="#produtos">Produtos</a><a href="#dicas">Dicas</a><a href="#duvidas">Dúvidas</a><a href="#seringas">Seringas</a><a href="#fontes">Fontes</a>
+  </nav>
+</header>
+
+<main>
+<section id="inicio" class="hero">
+  <div>
+    <span class="eyebrow">CENTRAL INFORMATIVA</span>
+    <h1>Tirzepatida, sem complicação.</h1>
+    <p>Organize apresentações, compare informações e encontre respostas para as dúvidas que mais aparecem nos grupos.</p>
+    <div class="actions"><a class="btn primary" href="#calculadora">Abrir Calculadora</a><a class="btn ghost" href="#produtos">Ver apresentações</a></div>
+  </div>
+  <div class="hero-card"><div class="bubble">T</div><h3>Encontre o que procura</h3><p>Pesquise por marca, apresentação ou assunto.</p><input id="search" placeholder="Ex.: Lipoless, concentração..." aria-label="Pesquisar"></div>
+</section>
+
+<section class="notice"><b>⚠️ Informação e segurança</b><span>O TEREZA é um projeto informativo. Não substitui prescrição, consulta médica ou orientação farmacêutica.</span></section>
+
+<section id="assistente" class="assistant-section">
+  <div class="assistant-shell">
+    <div class="assistant-intro">
+      <span class="eyebrow">TEREZA • ASSISTENTE INFORMATIVA</span>
+      <h2>Olá! Eu sou a TEREZA. 💙</h2>
+      <p>Me diga o que você quer entender e eu te levo ao conteúdo certo — de forma simples, organizada e sem substituir o profissional que acompanha seu tratamento.</p>
+      <div class="assistant-chips">
+        <button class="intent-chip" data-intent="seringa">💉 Entender minha seringa</button>
+        <button class="intent-chip" data-intent="produto">📦 Identificar meu produto</button>
+        <button class="intent-chip" data-intent="duvida">❓ Tirar uma dúvida</button>
+        <button class="intent-chip" data-intent="fontes">📚 Ver fontes</button>
+        <button class="intent-chip" data-intent="locais">📍 Ver locais de aplicação</button>
+        <button class="intent-chip" data-intent="sintoma">⚠️ Estou com um sintoma</button>
+      </div>
+    </div>
+    <div class="assistant-chat" aria-live="polite">
+      <div class="chat-head"><div class="assistant-avatar">T</div><div><b>TEREZA</b><span>central informativa</span></div><span class="status-dot" title="Ativa"></span></div>
+      <div id="assistantMessages" class="chat-messages">
+        <div class="message bot"><b>TEREZA</b><p>Por onde você quer começar?</p></div>
+      </div>
+      <div class="chat-input-row">
+        <input id="assistantInput" type="text" placeholder="Digite sua dúvida em linguagem natural..." aria-label="Digite sua dúvida">
+        <button id="assistantSend" class="primary-btn" aria-label="Enviar pergunta">Enviar</button>
+      </div>
+      <div class="chat-note">🔒 A TEREZA organiza informação. Não diagnostica, prescreve ou altera tratamento.</div>
+    </div>
+  </div>
+</section>
+
+<section class="cards">
+  <a href="#calculadora" class="feature"><span>🧮</span><h2>Calculadora da Tereza</h2><p>Consulte relações matemáticas da apresentação cadastrada e a referência do material fornecido.</p></a>
+  <a href="#comparar" class="feature"><span>📊</span><h2>Comparar apresentações</h2><p>Veja diferenças de concentração, volume e outras características.</p></a>
+  <a href="#produtos" class="feature"><span>📦</span><h2>Banco de produtos</h2><p>Catálogo visual organizado por marca e apresentação.</p></a>
+  <a href="#duvidas" class="feature"><span>❓</span><h2>Dúvidas frequentes</h2><p>As perguntas repetidas do grupo em um só lugar.</p></a>
+  <a href="#seringas" class="feature"><span>💉</span><h2>Guia das seringas</h2><p>Aprenda a interpretar a escala da sua seringa sem assumir que todo risquinho vale 1 UI.</p></a>
+</section>
+
+<section id="calculadora" class="section">
+  <div class="section-head"><span class="eyebrow">FERRAMENTA</span><h2>🧮 Calculadora da Tereza</h2><p>Selecione a marca, a apresentação e informe a dose prescrita para consultar a referência cadastrada.</p></div>
+  <div class="tool-grid">
+    <div class="panel">
+      <label>Marca<select id="marca"><option value="">Selecione</option></select></label>
+      <label>Apresentação<select id="apresentacao" disabled><option>Selecione a marca primeiro</option></select></label>
+      <label>Dose prescrita (mg)<input id="dose" type="number" min="0" step="0.01" placeholder="Ex.: 5"></label>
+      <button class="btn primary full" id="consultar">Consultar referência</button>
+      <div class="result" id="resultado">O resultado aparecerá aqui.</div>
+    </div>
+    <div class="panel soft">
+      <h3>Como a Tereza funciona</h3>
+      <ol><li>Escolha a marca.</li><li>Escolha a apresentação cadastrada.</li><li>Informe a dose que já foi prescrita.</li><li>Confira a informação de referência e a fonte.</li></ol>
+      <div class="safety-box"><b>🔎 Atenção à seringa</b><p>A escala não é igual em todos os modelos. Antes de interpretar qualquer marcação, identifique a capacidade e observe quanto vale cada intervalo entre as linhas.</p><a class="btn ghost" href="#seringas">Ver guia visual das seringas</a></div>
+      <p class="small">A ferramenta não transforma uma dose em uma marca de seringa nem fornece instrução operacional de aplicação.</p>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section id="seringas" class="section syringe-section">
+  <div class="section-head"><span class="eyebrow">GUIA VISUAL</span><h2>💉 Entenda sua seringa</h2>
+  <p>As escalas e divisões podem variar. Escolha o modelo para ampliar a explicação.</p></div>
+  <div class="syringe-tabs">
+    <button class="syringe-tab active" data-syringe="30">30 UI</button>
+    <button class="syringe-tab" data-syringe="50">50 UI</button>
+    <button class="syringe-tab" data-syringe="100">100 UI</button>
+  </div>
+  <div class="syringe-view">
+    <div class="syringe-drawing" id="syringeDrawing" aria-label="Ilustração da seringa">
+      <div class="barrel"><div class="liquid"></div><div class="ticks" id="ticks"></div><span class="scale-label" id="scaleLabel">30 UI</span></div>
+    </div>
+    <div class="panel syringe-info" id="syringeInfo">
+      <h3>Seringa de 30 UI</h3>
+      <p>O número de UI da seringa indica a capacidade da escala. Ele não informa, sozinho, a concentração do medicamento.</p>
+      <div class="tip"><b>Como ler:</b> observe os números impressos e conte as divisões entre eles. A menor divisão pode variar conforme o modelo.</div>
+      <div class="warning">⚠️ Não presuma que cada risquinho vale 1 UI. Confira a graduação do seu modelo.</div>
+    </div>
+  </div>
+</section>
+
+
+<section id="catalogo" class="section">
+  <div class="section-head"><span class="eyebrow">CATÁLOGO VISUAL</span><h2>📦 Conheça as apresentações</h2>
+  <p>Consulte as apresentações cadastradas e confira a concentração informada no material de referência.</p></div>
+  <div class="catalog-filters">
+    <input id="catalogSearch" type="search" placeholder="Buscar marca ou apresentação..." aria-label="Buscar no catálogo">
+    <select id="catalogType"><option value="Todas">Todas as apresentações</option><option value="Normal">Normal</option><option value="MD">MD / Multidose</option></select>
+  </div>
+  <div id="catalogGrid" class="catalog-grid"></div>
+</section>
+<section id="comparador" class="section alt">
+  <div class="section-head"><span class="eyebrow">COMPARADOR</span><h2>📊 Compare apresentações</h2>
+  <p>Compare somente dados cadastrados e identificados pela TEREZA.</p></div>
+  <div class="compare-controls">
+    <select id="compA"></select><select id="compB"></select>
+  </div>
+  <div id="compareTable" class="table-wrap"></div>
+</section>
+<section id="produtos" class="section">
+  <div class="section-head"><span class="eyebrow">CATÁLOGO</span><h2>📦 Banco de produtos</h2><p>O cadastro começa com as marcas citadas nos materiais enviados. Dados específicos ficam marcados até serem validados.</p></div>
+  <div class="product-grid" id="products"></div>
+</section>
+
+
+
+<section id="seringas" class="section syringe-section">
+  <div class="section-head"><span class="eyebrow">GUIA VISUAL</span><h2>💉 Como ler as marcações da seringa</h2><p><b>Regra principal:</b> não presuma que cada risquinho representa 1 UI. A graduação depende do modelo da seringa.</p></div>
+  <div class="warning-card"><b>⚠️ Uma seringa de 100 UI pode ter uma escala diferente de outra seringa de 100 UI.</b><span>O número 30, 50 ou 100 UI informa a capacidade da escala; ele, sozinho, não informa quanto vale cada pequeno intervalo.</span></div>
+  <div class="syringe-grid">
+    <article class="syringe-card"><img src="syringes-scale.jpg" alt="Exemplo visual de seringas com diferentes escalas" onerror="this.src='syringes-scale.jpg'"><h3>Observe os intervalos</h3><p>Primeiro identifique os números maiores. Depois conte os pequenos intervalos entre duas marcações numeradas. É isso que determina a leitura da escala.</p></article>
+    <article class="syringe-card"><img src="syringes-reference.jpg" alt="Tabela visual enviada como material de referência"><h3>Não misture escalas</h3><p>Materiais de terceiros podem apresentar tabelas diferentes. A Tereza deve mostrar a origem de cada material e não tratar uma tabela de internet como regra universal.</p></article>
+    <article class="syringe-card"><img src="syringes-example.jpg" alt="Material visual sobre fracionamento de tirzepatida"><h3>Quando houver dúvida</h3><p>Se a escala da sua seringa não estiver clara, não tente “adivinhar” a divisão. Confirme o modelo e a graduação com o profissional que orientou o uso.</p></article>
+  </div>
+  <div class="scale-demo"><h3>Checklist rápido</h3><div class="check-grid"><div><b>1</b><span>Veja a capacidade: 30, 50 ou 100 UI.</span></div><div><b>2</b><span>Leia os números impressos na própria seringa.</span></div><div><b>3</b><span>Conte os intervalos entre duas marcações conhecidas.</span></div><div><b>4</b><span>Não conclua que cada risquinho vale 1 UI sem verificar a escala.</span></div></div></div>
+</section>
+
+
+<section id="dicas" class="section">
+  <div class="section-head"><span class="eyebrow">CENTRAL DE CONTEÚDO</span><h2>💡 Dicas</h2>
+  <p>Informações educativas organizadas para facilitar a consulta.</p></div>
+  <div class="tips-grid">
+    <article class="content-card"><h3>💧 Hidratação</h3><p>Manter uma ingestão adequada de líquidos é importante. Náuseas, vômitos ou diarreia podem aumentar o risco de desidratação.</p></article>
+    <article class="content-card"><h3>🥗 Alimentação</h3><p>Priorize uma alimentação equilibrada e adequada às suas necessidades. Em caso de dúvidas, procure orientação de nutricionista ou médico.</p></article>
+    <article class="content-card"><h3>🏋️ Massa muscular</h3><p>Durante o emagrecimento, acompanhamento nutricional e atividade física podem ajudar na preservação da massa muscular.</p></article>
+    <article class="content-card"><h3>⚖️ Platô</h3><p>Uma fase de estabilidade do peso não deve ser interpretada isoladamente. Peso, medidas, rotina e evolução ao longo do tempo ajudam a entender o cenário.</p></article>
+    <article class="content-card"><h3>🤢 Sintomas</h3><p>Náusea, vômitos, diarreia, constipação e outros sintomas podem ocorrer. Intensidade, duração e contexto importam.</p></article>
+    <article class="content-card"><h3>🚨 Sinais de alerta</h3><p>Sintomas intensos, persistentes ou preocupantes merecem avaliação profissional. Em situação de emergência, procure atendimento imediatamente.</p></article>
+  </div>
+</section>
+
+<section id="duvidas" class="section alt">
+  <div class="section-head"><span class="eyebrow">CENTRAL DE DÚVIDAS</span><h2>❓ Perguntas e dúvidas</h2>
+  <p>Respostas educativas, organizadas por assunto, com linguagem simples e limites claros.</p></div>
+  <div class="faq-tools">
+    <input id="faqSearch" type="search" placeholder="Digite uma palavra ou sua dúvida..." aria-label="Pesquisar dúvidas">
+    <div class="faq-cats" id="faqCats">
+      <button class="faq-cat active" data-cat="Todas">Todas</button>
+      <button class="faq-cat" data-cat="Seringas">💉 Seringas</button>
+      <button class="faq-cat" data-cat="Apresentações">📦 Apresentações</button>
+      <button class="faq-cat" data-cat="Medicamento">💊 Medicamento</button>
+      <button class="faq-cat" data-cat="Alimentação">🥗 Alimentação</button>
+      <button class="faq-cat" data-cat="Peso">⚖️ Peso/platô</button>
+      <button class="faq-cat" data-cat="Sintomas">🤢 Sintomas</button>
+      <button class="faq-cat" data-cat="Segurança">🛡️ Segurança</button>
+    </div>
+  </div>
+  <div class="faq-meta"><span id="faqCount">0 dúvidas</span><span>🔎 Conteúdo educativo — não é diagnóstico ou prescrição.</span></div>
+  <div id="faqList" class="faq-list"></div>
+  <div class="ask-box">
+    <h3>🔎 Não encontrou sua dúvida?</h3>
+    <p>Escreva do jeito que você falaria. A TEREZA identifica o assunto mais próximo e mostra onde procurar, sem interpretar sintomas como diagnóstico e sem definir dose.</p>
+    <div class="ask-row"><input id="askInput" placeholder="Ex.: minha seringa de 100 UI tem risquinhos de 2 em 2" aria-label="Escreva sua dúvida"><button id="askBtn" class="primary-btn">Encontrar assunto</button></div>
+    <div id="askResult" class="ask-result"></div>
+  </div>
+  <div class="safety-box faq-safety"><b>🛡️ Regra da TEREZA</b><p>Quando uma pergunta envolver prescrição, mudança de dose, diagnóstico, reação grave ou uma informação que não possa ser confirmada, a resposta deve parar na informação educativa e encaminhar para um profissional de saúde.</p></div>
+</section>
+
+<section id="fichas" class="section alt">
+  <div class="section-head"><span class="eyebrow">GUIA DE APRESENTAÇÕES</span><h2>🔍 Fichas dos produtos</h2>
+  <p>Consulte os dados cadastrados e aprenda a identificar a apresentação no rótulo. Conteúdo exclusivamente informativo.</p></div>
+  <div class="product-picker"><label>Escolha uma apresentação
+    <select id="productDetailSelect"></select>
+  </label></div>
+  <article id="productDetail" class="detail-card"></article>
+</section>
+<section id="locaisAplicacao" class="section">
+  <div class="section-head"><span class="eyebrow">GUIA VISUAL</span><h2>📍 Onde aplicar?</h2><p>Consulte o material visual de locais de aplicação disponível no projeto. A TEREZA apresenta informação educativa e não define a conduta individual.</p></div>
+  <div class="panel soft"><h3>Locais apresentados</h3><p>Abdômen, parte interna das coxas, parte superior dos braços e região dos flancos são os locais ilustrados no material educativo da TEREZA.</p><p class="small">A escolha e a técnica devem seguir a orientação do profissional responsável pelo tratamento.</p></div>
+</section>
+
+<section id="seguranca" class="section">
+  <div class="section-head"><span class="eyebrow">NÚCLEO DE SEGURANÇA</span><h2>🛡️ Como a TEREZA trata as informações</h2>
+  <p>Antes de apresentar uma informação, a TEREZA identifica sua origem e o nível de validação.</p></div>
+  <div class="trust-grid">
+    <article class="trust-card trust-green"><b>🟢 CONFIRMADO</b><p>Informação conferida em fonte adequada para aquele dado.</p></article>
+    <article class="trust-card trust-blue"><b>🔵 MATERIAL DE REFERÊNCIA</b><p>Dado recebido em material do projeto, sempre identificado pela origem.</p></article>
+    <article class="trust-card trust-yellow"><b>🟡 DIVERGENTE</b><p>Existem informações diferentes. A TEREZA mostra a divergência em vez de escolher por conta própria.</p></article>
+    <article class="trust-card trust-red"><b>🔴 NÃO CONFIRMADO</b><p>Não é apresentado como fato nem usado para gerar cálculo.</p></article>
+  </div>
+  <div class="safety-rules">
+    <h3>Regras essenciais</h3>
+    <ul>
+      <li><b>Não inventar:</b> quando faltar informação, a TEREZA informa que o dado não foi confirmado.</li>
+      <li><b>Não extrapolar:</b> uma apresentação não é usada automaticamente para outra.</li>
+      <li><b>Não prescrever:</b> dose, frequência e mudanças de tratamento não são decididas pela TEREZA.</li>
+      <li><b>Não substituir profissional:</b> situações clínicas, sintomas importantes ou dúvidas sobre tratamento devem ser avaliadas por profissional habilitado.</li>
+      <li><b>Conferir o rótulo:</b> o usuário deve comparar a informação do site com a embalagem que possui.</li>
+    </ul>
+  </div>
+  <div class="medical-disclaimer"><b>⚠️ Aviso permanente</b><br>A TEREZA é uma ferramenta educativa. Seu conteúdo não constitui orientação médica, diagnóstico, prescrição ou recomendação de ajuste de tratamento.</div>
+</section>
+
+<section id="status" class="section">
+  <div class="section-head"><span class="eyebrow">CHECK-UP</span><h2>🧪 Status da TEREZA</h2>
+  <p>Checklist da versão atual antes da publicação.</p></div>
+  <div class="qa-grid">
+    <div class="qa-ok">✓ Estrutura do site</div><div class="qa-ok">✓ Catálogo visual</div>
+    <div class="qa-ok">✓ Fichas individuais</div><div class="qa-ok">✓ Central de dúvidas</div>
+    <div class="qa-ok">✓ Núcleo de segurança</div><div class="qa-ok">✓ Navegação mobile</div>
+  </div>
+  <div class="medical-disclaimer"><b>⚠️ Antes de publicar:</b> as informações de cada apresentação devem ser conferidas no material/fonte correspondente e as imagens devem ser associadas somente ao produto correto. Este check-up valida a estrutura do projeto; não certifica a exatidão clínica de uma informação de produto.</div>
+</section>
+<section id="fontes" class="section">
+  <div class="section-head"><span class="eyebrow">TRANSPARÊNCIA</span><h2>📚 Fontes e critérios</h2><p>Queremos que cada informação possa ser conferida.</p></div>
+  <div class="source-grid">
+    <div class="panel"><h3>Material da farmácia</h3><p>As tabelas e referências fornecidas pela farmácia serão identificadas como tal, sem serem apresentadas como documento regulatório.</p></div>
+    <div class="panel"><h3>Fontes oficiais</h3><p>Quando uma informação for validada em bula, registro ou documentação regulatória, ela receberá a identificação correspondente.</p></div>
+    <div class="panel"><h3>Conteúdo não verificado</h3><p>Relatos, imagens ou afirmações sem fonte adequada não serão tratados como fatos.</p></div>
+  </div>
+</section>
+</main>
+
+<footer><div><b>TEREZA</b><p>Central informativa sobre apresentações e dúvidas de tirzepatida.</p></div><p class="small">Uso exclusivamente informativo. Não substitui orientação de profissional habilitado.</p></footer>
+<script src="app.js"></script>
+
+<nav class="mobile-bottom-nav" aria-label="Navegação rápida">
+  <a href="#inicio"><span>⌂</span><small>Início</small></a>
+  <a href="#calculadora"><span>◎</span><small>Calcular</small></a>
+  <a href="#seringas"><span>💉</span><small>Seringa</small></a>
+  <a href="#catalogo"><span>▣</span><small>Catálogo</small></a>
+  <a href="#duvidas"><span>?</span><small>Dúvidas</small></a>
+</nav>
+<button class="back-top" id="backTop" aria-label="Voltar ao topo">↑</button>
+<footer class="site-footer"><a href="privacidade.html">Privacidade</a><a href="uso.html">Termos de uso</a><span>© TEREZA — conteúdo educativo</span></footer></body></html>

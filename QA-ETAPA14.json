@@ -1,0 +1,42 @@
+{
+  "etapa": 14,
+  "objetivo": "Validação estrutural, funcional e de segurança da versão atual",
+  "checks": [
+    [
+      "Estrutura",
+      "index.html, styles.css e app.js presentes",
+      true
+    ],
+    [
+      "Dicas/Dúvidas",
+      "IDs e componentes da Etapa 6 presentes",
+      true
+    ],
+    [
+      "Catálogo",
+      "Busca/filtro e cards presentes",
+      true
+    ],
+    [
+      "Fichas",
+      "Seletor e ficha individual presentes",
+      true
+    ],
+    [
+      "Segurança",
+      "Quatro níveis e aviso permanente presentes",
+      true
+    ],
+    [
+      "Mobile",
+      "Menu inferior e botão voltar ao topo presentes",
+      true
+    ],
+    [
+      "Limite clínico",
+      "Texto de não prescrição presente",
+      true
+    ]
+  ],
+  "observacao": "Teste automatizado de estrutura. A validação visual em dispositivos reais e a conferência final das informações de cada apresentação continuam recomendadas antes da publicação."
+}

@@ -1,0 +1,10 @@
+{
+  "name": "TEREZA — Guia Informativo",
+  "short_name": "TEREZA",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f7fbff",
+  "theme_color": "#5f7f9b",
+  "description": "Guia educativo e informativo sobre apresentações, seringas, dúvidas e fontes.",
+  "icons": []
+}
